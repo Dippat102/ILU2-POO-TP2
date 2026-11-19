@@ -10,13 +10,13 @@ public class BoundaryLibererEtal {
 	}
 
 	public void libererEtal(String nomVendeur) {
-		if (!controlLibererEtal.isVendeur(nomVendeur)) {
+		if (Boolean.FALSE.equals(controlLibererEtal.isVendeur(nomVendeur))) {
 			System.out.println("Mais vous n'êtes pas inscrit sur notre marché aujourd'hui!");
 		}
 		else {
 			String[] donneesEtal=controlLibererEtal.libererEtal(nomVendeur);
 			Boolean etalOccupe=Boolean.valueOf(donneesEtal[0]);
-			if (etalOccupe) {
+			if (Boolean.TRUE.equals(etalOccupe)) {
 				String produit = donneesEtal[2];
 				String quantiteInitial=donneesEtal[3];
 				String quantiteVendu=donneesEtal[4];

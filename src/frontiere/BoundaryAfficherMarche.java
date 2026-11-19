@@ -10,6 +10,23 @@ public class BoundaryAfficherMarche {
 	}
 
 	public void afficherMarche(String nomAcheteur) {
-
+		String[] infosMarche= controlAfficherMarche.donnerInfosMarche();
+		if (infosMarche.length==0) {
+			System.out.println("Le marché est vide, revenez plus tard.");
+		}
+		else {
+			System.out.println(nomAcheteur+", vous trouvez au marché");
+			String vendeur;
+			String quantite;
+			String produit;
+			for (int i=0; i<infosMarche.length; i++) {
+				vendeur=infosMarche[i];
+				i++;
+				quantite = infosMarche[i];
+				i++;
+				produit=infosMarche[i];
+				System.out.println("-"+vendeur+" qui vend "+ quantite+" "+produit);
+			}
+		}
 	}
 }
